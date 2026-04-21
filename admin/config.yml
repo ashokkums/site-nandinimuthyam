@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # ← change this
+  repo: ashokkums/site-nandinimuthyam  # ← change this
   branch: main
 
 # Where uploaded images live in the repo / on the deployed site
