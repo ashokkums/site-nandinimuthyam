@@ -1,6 +1,6 @@
 ---
 title: My First Project
-category: Film
+category: Other
 date: 2026-04-20T10:00:00.000Z
 description: A short sample project to show the CMS in action.
 ---
