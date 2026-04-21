@@ -1,6 +1,6 @@
 ---
-headline: "Nandini"
-tagline: "actress · dancer · filmmaker"
+headline: Nandini Muthyam
+tagline: actress · dancer · filmmaker
 ---
 
 I tell stories — on stage, on screen, and in the space between a breath and a step.
