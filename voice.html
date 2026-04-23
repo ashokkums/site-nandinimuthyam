@@ -11,16 +11,18 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">
-      <div class="brand-mark">N</div>
+      <img src="images/icon.webp" alt="Nandini Muthyam" class="brand-mark" />
       <div class="brand-name">Nandini <strong>Muthyam</strong></div>
     </a>
     <div class="nav-folio">/ portfolio '26</div>
     <div class="nav-links">
-      <a href="index.html">Index</a>
-      <a href="work.html">Work</a>
-      <a href="reel.html">Reel</a>
-      <a href="voice.html" class="active">Voice</a>
-      <a href="contact.html">Contact</a>
+      <a href="work.html" data-page="work.html">Work</a>
+      <a href="reel.html" data-page="reel.html">Reel</a>
+      <a href="gallery.html" data-page="gallery.html">Gallery</a>
+      <a href="voice.html" data-page="voice.html" class="active">Voice</a>
+      <a href="dance.html" data-page="dance.html">Dance</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
       <span class="casting-pill nav-cta">Casting now · 2026</span>
     </div>
   </div>
@@ -44,17 +46,27 @@
   <strong>English</strong> — native · neutral American &amp; RP on demand.</p>
 
   <h3>Voice samples</h3>
-  <p>Drop audio embeds here — SoundCloud, Vimeo, or self-hosted.</p>
+  <p>A selection of voice work across registers, styles, and languages.</p>
 
-  <div style="aspect-ratio: 21/6; background: var(--bg-raise); border: 1px solid var(--line); border-radius: 8px; display: grid; place-items: center; margin: 1rem 0; max-width: 680px;">
-    <div style="text-align: center; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase;">
-      ♪ voice sample placeholder
+  <div class="voice-sample-card">
+    <div class="voice-sample-meta">
+      <div class="voice-sample-label">Tamil · Voice-over · Modified register</div>
+      <div class="voice-sample-title"><a href="https://www.imdb.com/title/tt22180308/" target="_blank" rel="noopener" class="voice-sample-imdb">Vivesini</a> — Traditional News Reader</div>
+      <p class="voice-sample-note">
+        From <em>Vivesini</em>, a Tamil feature film. Voice modified to replicate the cadence and tonal
+        authority of a traditional Tamil television news reader — measured pacing, clear diction, and
+        the formal register characteristic of classic Tamil broadcast journalism.
+      </p>
     </div>
+    <video class="voice-video" controls preload="metadata">
+      <source src="video/vivesini_voice_over.mp4" type="video/mp4" />
+      Your browser does not support the video element.
+    </video>
   </div>
 
   <h3>Dialect &amp; accents</h3>
-  <p>Comfortable in standard American, neutral RP, light Tamil-English,
-  and Hyderabadi Telugu. Dialect coaches on request.</p>
+  <p>Classically trained in voice coaching. Comfortable in formal Tamil, Chennai Tamil,
+  standard American, neutral RP, light Tamil-English, and Hyderabadi Telugu.</p>
 
 </main>
 
@@ -62,12 +74,13 @@
   <div class="footer-inner">
     <div>© Nandini Muthyam · 2026</div>
     <div>
-      <a href="mailto:[email protected]">Email</a>
-      <a href="https://instagram.com/nandinimuthyam">Instagram</a>
-      <a href="admin/">Admin</a>
+      <a href="#" data-em="contact" data-dm="nandinimuthyam.com">Email</a>
+      <a href="https://www.instagram.com/thebohonartaki/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.imdb.com/name/nm12873187/?ref_=tt_cst_t_10" target="_blank" rel="noopener">IMDb</a>
     </div>
   </div>
 </footer>
 
+<script src="components.js"></script>
 </body>
 </html>

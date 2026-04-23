@@ -11,16 +11,18 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">
-      <div class="brand-mark">N</div>
+      <img src="images/icon.webp" alt="Nandini Muthyam" class="brand-mark" />
       <div class="brand-name">Nandini <strong>Muthyam</strong></div>
     </a>
     <div class="nav-folio">/ portfolio '26</div>
     <div class="nav-links">
-      <a href="index.html">Index</a>
-      <a href="work.html">Work</a>
-      <a href="reel.html" class="active">Reel</a>
-      <a href="voice.html">Voice</a>
-      <a href="contact.html">Contact</a>
+      <a href="work.html" data-page="work.html">Work</a>
+      <a href="reel.html" data-page="reel.html" class="active">Reel</a>
+      <a href="gallery.html" data-page="gallery.html">Gallery</a>
+      <a href="voice.html" data-page="voice.html">Voice</a>
+      <a href="dance.html" data-page="dance.html">Dance</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
       <span class="casting-pill nav-cta">Casting now · 2026</span>
     </div>
   </div>
@@ -37,11 +39,95 @@
     </p>
   </header>
 
-  <div style="aspect-ratio: 16/9; background: var(--bg-raise); border: 1px solid var(--line); border-radius: 8px; display: grid; place-items: center; margin-top: 1rem;">
-    <div style="text-align: center; font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase;">
-      ▶ Reel embed goes here<br>
-      <span style="font-size: 0.7rem; display:block; margin-top: 0.5rem;">(replace with vimeo / youtube iframe)</span>
+  <!-- Baahar film entry -->
+  <div class="film-entry">
+
+    <div class="film-entry-header">
+      <div class="film-entry-kicker">Featured film</div>
+      <h2 class="film-entry-title">Baahar <span class="film-entry-year">(2021)</span></h2>
+      <div class="film-entry-role">Lead Actress</div>
     </div>
+
+    <p class="film-entry-synopsis">
+      Disaster brews when Seher gets accepted to a boarding school — a dream come true —
+      on the evening of a big family dinner.
+    </p>
+
+    <div class="film-entry-credits">
+      <div class="film-credit-row">
+        <span class="film-credit-label">Directed by</span>
+        <span class="film-credit-value">Prakshi Malik</span>
+      </div>
+    </div>
+
+    <div class="film-awards">
+      <div class="film-awards-col">
+        <div class="film-awards-heading">Awards</div>
+        <ul class="film-awards-list">
+          <li>2020 Austin Film Society Grant for Shorts Projects — Winner</li>
+          <li>Best Short Film · DC South Asian Film Festival</li>
+        </ul>
+      </div>
+      <div class="film-awards-col">
+        <div class="film-awards-heading">Official Selection</div>
+        <ul class="film-awards-list">
+          <li>New Orleans Film Festival</li>
+          <li>Jaipur International Film Festival</li>
+          <li>Minneapolis St. Paul International Film Festival</li>
+          <li>Houston Asian American and Pacific Islander Film Festival</li>
+          <li>Tasveer Film Festival</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PBS embed -->
+    <div class="film-embed-wrap">
+      <div class="film-embed-note">
+        ▶ Film begins at <strong>5:36</strong>
+      </div>
+      <div class="pbs-viral-player-wrapper">
+        <iframe
+          src="https://player.pbs.org/viralplayer/3078201526/"
+          allowfullscreen
+          allow="encrypted-media"
+          loading="lazy"
+          title="Baahar (2021) — PBS"
+          style="position: absolute; top: 0; width: 100%; height: 100%; border: 0;">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- School play entry -->
+  <div class="film-entry">
+
+    <div class="film-entry-header">
+      <div class="film-entry-kicker">Stage · College</div>
+      <h2 class="film-entry-title">Early Stage Drama</h2>
+      <div class="film-entry-role">Main Character</div>
+    </div>
+
+    <p class="film-entry-synopsis">
+      Lead role in a full-length stage play performed entirely in pure Tamil —
+      her first major college theatrical performance. The piece showcases classical
+      Tamil diction and stage presence honed through years of traditional training.
+    </p>
+
+    <!-- Local video embed -->
+    <div class="film-embed-wrap">
+      <div class="pbs-viral-player-wrapper">
+        <video
+          controls
+          preload="metadata"
+          style="position: absolute; top: 0; width: 100%; height: 100%; border: 0; background: #000; object-fit: contain;"
+          title="College Stage Play — Full Length Tamil Dialogue">
+          <source src="video/school_play.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
   </div>
 
   <h3>Recent selects</h3>
@@ -56,12 +142,13 @@
   <div class="footer-inner">
     <div>© Nandini Muthyam · 2026</div>
     <div>
-      <a href="mailto:[email protected]">Email</a>
-      <a href="https://instagram.com/nandinimuthyam">Instagram</a>
-      <a href="admin/">Admin</a>
+      <a href="#" data-em="contact" data-dm="nandinimuthyam.com">Email</a>
+      <a href="https://www.instagram.com/thebohonartaki/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.imdb.com/name/nm12873187/?ref_=tt_cst_t_10" target="_blank" rel="noopener">IMDb</a>
     </div>
   </div>
 </footer>
 
+<script src="components.js"></script>
 </body>
 </html>
