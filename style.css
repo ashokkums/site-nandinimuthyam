@@ -272,35 +272,40 @@ body::before {
 .hero-surname {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(3.5rem, 13vw, 11rem);
-  line-height: 0.85;
+  font-size: clamp(2.45rem, 9.1vw, 7.7rem);
+  line-height: 1.05;
   letter-spacing: -0.04em;
   color: transparent;
   -webkit-text-stroke: 1px var(--line);
   margin-left: 10%;
   margin-top: -0.3em;
   white-space: nowrap;
-  overflow: hidden;
 }
 
-/* Role pills */
+/* Role taglines */
 .roles {
   display: flex;
-  gap: 0.75rem;
+  gap: 0;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   margin-bottom: 2.5rem;
+  align-items: center;
 }
 .role {
   font-family: var(--mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--bg-raise);
-  color: var(--paper-dim);
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
+}
+.role + .role::before {
+  content: '·';
+  margin: 0 0.6rem;
+  color: var(--accent);
+  opacity: 0.6;
 }
 
 /* Two-column hero body */
