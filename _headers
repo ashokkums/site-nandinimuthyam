@@ -1,0 +1,25 @@
+# Cloudflare Pages _headers
+# Gzip/Brotli is automatic — these headers set caching & security
+
+# HTML — revalidate on every visit
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Root
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CSS & JS — long cache (filename-versioned via .min)
+/style.min.css
+  Cache-Control: public, max-age=31536000, immutable
+/site.min.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images — cache for 1 year
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts served by Google — already cached by browser
