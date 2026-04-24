@@ -4,22 +4,27 @@
 # HTML — revalidate on every visit
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+  Expires: 0
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
+  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
 
 # Root
 /
   Cache-Control: public, max-age=0, must-revalidate
+  Expires: 0
 
 # CSS & JS — long cache (filename-versioned via .min)
 /style.min.css
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2026 23:59:59 GMT
 /site.min.js
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2026 23:59:59 GMT
 
 # Images — cache for 1 year
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+  Expires: Thu, 31 Dec 2026 23:59:59 GMT
 
 # Fonts served by Google — already cached by browser
