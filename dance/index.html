@@ -81,6 +81,117 @@
   .dance-lb-prev { left: 1.25rem; }
   .dance-lb-next { right: 1.25rem; }
   @media (max-width: 600px) { .dance-lb-btn { display: none; } }
+
+  /* ── Video Hero ── */
+  .dance-vhero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 520px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .dance-vhero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .dance-vhero-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177.78vh;
+    height: 56.25vw;
+    min-width: 100%;
+    min-height: 100%;
+    border: 0;
+  }
+  .dance-vhero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 8, 6, 0.25) 0%,
+      rgba(10, 8, 6, 0.55) 55%,
+      rgba(10, 8, 6, 0.88) 100%
+    );
+    z-index: 1;
+  }
+  .dance-vhero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 1.5rem;
+    max-width: 760px;
+  }
+  .dance-vhero-content .page-kicker {
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .dance-vhero-content .page-title {
+    color: var(--paper);
+  }
+  .dance-vhero-content .page-lead {
+    color: rgba(235, 218, 196, 0.78);
+    margin-top: 1rem;
+  }
+  .dance-vhero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    animation: vhero-bob 2.2s ease-in-out infinite;
+  }
+  .dance-vhero-scroll svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+  }
+  @keyframes vhero-bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  /* Volume button */
+  .dance-vhero-vol {
+    position: absolute;
+    bottom: 2rem;
+    right: 1.75rem;
+    z-index: 3;
+    background: rgba(10, 8, 6, 0.55);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--paper);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    backdrop-filter: blur(6px);
+  }
+  .dance-vhero-vol:hover { background: rgba(10,8,6,0.8); border-color: rgba(255,255,255,0.35); }
+  .dance-vhero-vol svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; pointer-events: none; }
+  @media (max-width: 600px) {
+    .dance-vhero-scroll { display: none; }
+  }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,6 +218,30 @@
     </div>
   </div>
 </nav>
+
+<!-- Full-screen video hero -->
+<section class="dance-vhero">
+  <div class="dance-vhero-bg">
+    <iframe
+      id="vhero-iframe"
+      src="https://www.youtube.com/embed/ovtRwFctXZ8?autoplay=1&mute=1&loop=1&controls=0&playlist=ovtRwFctXZ8&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&modestbranding=1&enablejsapi=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Arushya School of Dance — background">
+    </iframe>
+  </div>
+  <div class="dance-vhero-overlay"></div>
+  <button class="dance-vhero-vol" id="vhero-vol-btn" aria-label="Unmute video" title="Unmute">
+    <!-- muted icon -->
+    <svg id="vhero-icon-muted" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+    <!-- unmuted icon (hidden initially) -->
+    <svg id="vhero-icon-sound" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+  </button>
+  <div class="dance-vhero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    scroll
+  </div>
+</section>
 
 <main class="page">
 
@@ -246,5 +381,47 @@
   </div>
 </footer>
 <script src="../site.min.js" defer></script>
+<script>
+  /* YouTube IFrame API — volume toggle for hero background */
+  (function() {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+
+    var player, muted = true;
+    var btn = document.getElementById('vhero-vol-btn');
+    var iconMuted = document.getElementById('vhero-icon-muted');
+    var iconSound = document.getElementById('vhero-icon-sound');
+
+    window.onYouTubeIframeAPIReady = function() {
+      player = new YT.Player('vhero-iframe', {
+        events: {
+          onReady: function(e) { e.target.mute(); }
+        }
+      });
+    };
+
+    if (btn) {
+      btn.addEventListener('click', function() {
+        if (!player) return;
+        if (muted) {
+          player.unMute();
+          player.setVolume(80);
+          iconMuted.style.display = 'none';
+          iconSound.style.display = '';
+          btn.setAttribute('aria-label', 'Mute video');
+          btn.title = 'Mute';
+        } else {
+          player.mute();
+          iconMuted.style.display = '';
+          iconSound.style.display = 'none';
+          btn.setAttribute('aria-label', 'Unmute video');
+          btn.title = 'Unmute';
+        }
+        muted = !muted;
+      });
+    }
+  })();
+</script>
 </body>
 </html>
