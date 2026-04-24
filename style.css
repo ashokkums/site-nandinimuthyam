@@ -827,6 +827,32 @@ body::before {
   border-top: 1px dashed var(--line);
 }
 
+/* Dance thumbnail strip */
+.dance-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.dance-thumbs img {
+  height: 110px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.82;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: 1px solid var(--line);
+}
+.dance-thumbs img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 600px) {
   .dance-info-grid {
     grid-template-columns: repeat(2, 1fr);

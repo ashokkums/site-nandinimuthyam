@@ -173,7 +173,7 @@
       <a href="reel.html" data-page="reel.html">Reel</a>
       <a href="gallery.html" data-page="gallery.html" class="active">Gallery</a>
       <a href="voice.html" data-page="voice.html">Voice</a>
-      <a href="dance.html" data-page="dance.html">Dance</a>
+      <a href="dance/" data-page="dance/">Dance</a>
       <a href="about.html" data-page="about.html">About</a>
       <a href="contact.html" data-page="contact.html">Contact</a>
       <span class="casting-pill nav-cta">Casting now · 2026</span>
@@ -253,7 +253,7 @@ var GALLERY_IMAGES = [
     item.className = 'photo-grid-item';
 
     var img = document.createElement('img');
-    img.src = 'images/' + src;
+    img.src = 'images/gallery/' + src;
     img.alt = 'Nandini Muthyam — photograph ' + (i + 1);
     img.loading = i < 4 ? 'eager' : 'lazy';
 
@@ -273,7 +273,7 @@ var GALLERY_IMAGES = [
   function open(index) {
     current = index;
     lbImg.style.opacity = '0';
-    lbImg.src = 'images/' + images[current];
+    lbImg.src = 'images/gallery/' + images[current];
     lbImg.alt = 'Nandini Muthyam — photograph ' + (current + 1);
     lbImg.onload = function () { lbImg.style.opacity = '1'; };
     lbCur.textContent = pad(current + 1);
