@@ -285,7 +285,7 @@
 
   <script>
     (function() {
-      const IMGS = ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp","7.webp","8.webp","9.webp"];
+      const IMGS = ["1.webp","2.webp","3.webp","4.webp","5.webp","6.webp"];
       const thumbs = document.getElementById('dance-thumbs');
       const lb = document.getElementById('dance-lb');
       const lbImg = document.getElementById('dance-lb-img');
@@ -294,7 +294,7 @@
 
       IMGS.forEach(function(name, i) {
         const img = document.createElement('img');
-        img.src = '../images/gallery/' + name;
+        img.src = '../images/dance/' + name;
         img.alt = 'Dance photo ' + (i + 1);
         img.loading = 'lazy';
         img.onclick = function() { openLb(i); };
@@ -303,7 +303,7 @@
 
       function openLb(i) {
         cur = i;
-        lbImg.src = '../images/gallery/' + IMGS[i];
+        lbImg.src = '../images/dance/' + IMGS[i];
         lbCounter.textContent = (i + 1) + ' / ' + IMGS.length;
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
