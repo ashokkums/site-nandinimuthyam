@@ -122,23 +122,6 @@
     );
     z-index: 1;
   }
-  .dance-vhero-content {
-    position: relative;
-    z-index: 2;
-    padding: 2rem 1.5rem;
-    max-width: 760px;
-  }
-  .dance-vhero-content .page-kicker {
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-  .dance-vhero-content .page-title {
-    color: var(--paper);
-  }
-  .dance-vhero-content .page-lead {
-    color: rgba(235, 218, 196, 0.78);
-    margin-top: 1rem;
-  }
   .dance-vhero-scroll {
     position: absolute;
     bottom: 2rem;
@@ -225,7 +208,19 @@
   </div>
 </nav>
 
-<!-- Full-screen video hero -->
+<!-- Page heading (above video) -->
+<div class="page" style="padding-bottom: 1.5rem;">
+  <header class="page-header" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
+    <div class="page-kicker">Section 07 — The Dancer</div>
+    <h1 class="page-title">Arush<em>y</em>a <a href="https://www.arushya.com" target="_blank" rel="noopener" style="display:inline"><span class="work-external">↗ Visit Arushya</span></a><span class="dance-school-sub">School of Dance</span></h1>
+    <p class="page-lead">
+      A school rooted in the Kalakshetra tradition — where classical form
+      meets living practice, and every student finds their own beginning.
+    </p>
+  </header>
+</div>
+
+<!-- Full-screen video -->
 <section class="dance-vhero">
   <div class="dance-vhero-bg">
     <iframe
@@ -238,9 +233,7 @@
   </div>
   <div class="dance-vhero-overlay"></div>
   <button class="dance-vhero-vol" id="vhero-vol-btn" aria-label="Unmute video" title="Unmute">
-    <!-- muted icon -->
     <svg id="vhero-icon-muted" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-    <!-- unmuted icon (hidden initially) -->
     <svg id="vhero-icon-sound" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
   </button>
   <button class="dance-vhero-scroll" id="vhero-scroll-btn" aria-label="Scroll to content">
@@ -250,15 +243,6 @@
 </section>
 
 <main class="page">
-
-  <header class="page-header">
-    <div class="page-kicker">Section 07 — The Dancer</div>
-    <h1 class="page-title">Arush<em>y</em>a <a href="https://www.arushya.com" target="_blank" rel="noopener" style="display:inline"><span class="work-external">↗ Visit Arushya</span></a><span class="dance-school-sub">School of Dance</span></h1>
-    <p class="page-lead">
-      A school rooted in the Kalakshetra tradition — where classical form
-      meets living practice, and every student finds their own beginning.
-    </p>
-  </header>
 
   <p>
     Founder and Principal of <strong><a href="https://www.arushya.com" target="_blank" rel="noopener">Arushya School of Dance</a></strong>
