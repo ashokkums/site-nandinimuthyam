@@ -125,20 +125,27 @@
 
   .lightbox-close {
     position: fixed;
-    top: 1.25rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(10, 8, 6, 0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--paper);
+    font-size: 1.25rem;
     cursor: pointer;
-    line-height: 1;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.2s;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
     font-family: var(--mono);
+    z-index: 1010;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
   }
 
-  .lightbox-close:hover { color: var(--paper); }
+  .lightbox-close:hover { background: rgba(10,8,6,0.95); border-color: rgba(255,255,255,0.4); }
 
   .lightbox-btn {
     position: fixed;
