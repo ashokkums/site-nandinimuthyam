@@ -145,6 +145,25 @@ body::before {
   background: var(--accent);
 }
 
+/* Contact button in nav */
+.nav-contact-btn {
+  font-family: var(--mono) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1.1rem !important;
+  background: var(--accent) !important;
+  color: var(--bg-deep) !important;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-contact-btn:hover {
+  background: var(--accent-soft) !important;
+  color: var(--bg-deep) !important;
+}
+.nav-contact-btn::after { display: none !important; }
+
 .casting-pill {
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -411,6 +430,12 @@ body::before {
 .btn-ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* "Say hello" link below hero CTAs */
+.hero-contact-link {
+  display: inline-flex;
+  margin-top: 1rem;
 }
 
 /* Stats bar */
